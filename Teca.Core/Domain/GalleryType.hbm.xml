@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <class name="Teca.Core.Domain.GalleryType, Teca.Core" table="GalleryType" dynamic-update="true">
+    <id name="Id" column="Id" type="Int32" unsaved-value="0">
+      <generator class="identity" />
+    </id>
+    <property name="TitleVNI" column="TitleVNI" type="string" length="255"/>
+    <property name="TitleENG" column="TitleENG" type="string" length="255" />    
+    <property name="ImgPath" column="ImgPath" type="string" length="512" />
+    <property name="UrlName" column="UrlName" type="string" length="200"/>
+    <property name="Active" column="Active" type="Boolean" />    
+    <property name="CreateBy" column="CreateBy" type="string" length="50"/>
+    <property name="CreateDate" column="CreateDate" type="DateTime" />
+    <property name="Priority" column="Priority" type="int" />
+
+    <bag name="Galleries" table="Gallery" lazy="true" cascade="none" inverse="true">
+      <key column="TypeID"/>
+      <one-to-many class="Teca.Core.Domain.Gallery, Teca.Core"/>
+    </bag>
+  </class>
+
+</hibernate-mapping>

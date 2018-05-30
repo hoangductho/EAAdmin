@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <class name="IdentityManagement.Domain.operation, IdentityManagement" table="operation" >
+    <id name="operationid" column="operationid" type="Int32" unsaved-value="0">
+      <generator class="identity" />
+    </id>
+    <property name="AppID" column="AppID" type="int" />
+    <property name="name" column="name" type="string" length="100" />
+    <property name="cancreate" column="cancreate" type="Boolean" />
+    <property name="canread" column="canread" type="Boolean" />
+    <property name="canupdate" column="canupdate" type="Boolean" />
+    <property name="candelete" column="candelete" type="Boolean" />
+    <property name="islocked" column="islocked" type="Boolean" />
+  </class>
+
+</hibernate-mapping>

@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <class name="Teca.Core.Domain.Document, Teca.Core" table="Document" >
+    <id name="Id" column="Id" type="Int32" unsaved-value="0">
+      <generator class="identity" />
+    </id>    
+    <property name="Name" column="Name" type="string" length="250" />
+    <property name="NameENG" column="NameENG" type="string" length="250" />
+    <property name="Data" column="Data" type="BinaryBlob" />
+    <property name="Description" column="Description" type="StringClob" />
+    <property name="Active" column="Active" type="Boolean" />
+    <property name="CreateDate" column="CreateDate" type="DateTime" />
+    <property name="CreateBy" column="CreateBy" type="string" length="50" />
+    <property name="Serial" column="Serial" type="string" length="50" />
+    <property name="PublishBy" column="PublishBy" type="string" length="250" />
+    <property name="PublishDate" column="PublishDate" type="DateTime"/>
+    <property name="StartDate" column="StartDate" type="DateTime"/>
+    <property name="SignedBy" column="SignedBy" type="string" length="100" />
+  </class>
+
+</hibernate-mapping>

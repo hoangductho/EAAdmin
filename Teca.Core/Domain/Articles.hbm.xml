@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+	<class name="Teca.Core.Domain.Articles, Teca.Core" table="Articles" dynamic-update="true">
+    <id name="Id" column="Id" type="Int32" unsaved-value="0">
+      <generator class="identity"/>
+    </id>
+    <property name="CategoryID" column="CategoryID" type="int" />
+		<property name="NameVNI" column="NameVNI" type="string" length="255" />
+		<property name="Summary" column="Summary" type="string" length="1024"/>
+    <property name="SummaryENG" column="SummaryENG" type="string" length="1024"/>
+		<property name="Descriptions" column="Descriptions" type="StringClob" />
+    <property name="DescriptionsENG" column="DescriptionsENG" type="StringClob" />
+    <property name="ImagePath" column="ImagePath" type="string" length="255" />
+		<property name="Priority" column="Priority" type="int" />
+		<property name="Css" column="Css" type="string" length="50" />
+		<property name="IsHot" column="IsHot" type="Boolean" />
+		<property name="Active" column="Active" type="Boolean" />
+		<property name="CreatedBy" column="CreatedBy" type="string" length="50" />
+		<property name="CreatedDate" column="CreatedDate" type="DateTime" />		
+		<property name="ModifiedBy" column="ModifiedBy" type="string" length="50" />  
+    <property name="ModifiedDate" column="ModifiedDate" type="DateTime" />
+    <property name="NameENG" column="NameENG"  type="string" length="255" />
+    <property name="URLName" column="URLName" type="string" length="128"/>
+    <property name="ApproveBy" column="ApproveBy" type="string" length="50"/>
+    <property name="ApproveDate" column="ApproveDate" type="DateTime"/>
+    <property name="EndDate" column="EndDate" type="DateTime"/>
+    <property name="StartDate" column="StartDate" type="DateTime"/>
+    <property name="Comment" column="Comment" type="string" length="512"/>
+    <property name="Approved" column="Approved" type="Boolean"/>
+    <property name="IsEvent" column="IsEvent" type="Boolean"/>
+    <property name="AttachData" column="AttachData" type="BinaryBlob"/>
+    <property name="TypeData" column="TypeData" type="string" length="50"/>
+    <many-to-one name="Categories" class="Teca.Core.Domain.Category,Teca.Core" column="CategoryID" not-found="ignore" insert="false" update ="false" fetch="select" />
+	</class>
+
+</hibernate-mapping>

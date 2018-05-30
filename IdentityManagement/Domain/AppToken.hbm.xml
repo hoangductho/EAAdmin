@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <class name="IdentityManagement.Domain.AppToken, IdentityManagement" table="AppToken" >
+    <id name="AppTokenID" column="AppTokenID" type="Int32" unsaved-value="0">
+      <generator class="identity" />
+    </id>
+    <property name="Token" column="Token" type="string" length="255" />
+    <property name="AppName" column="AppName" type="string" length="255" />
+    <property name="LoginID" column="LoginID" type="string" length="255" />
+    <property name="UserID" column="UserID" type="int" />
+    <property name="AppID" column="AppID" type="int" />
+    <property name="CreatedTime" column="CreatedTime" type="DateTime" />
+  </class>
+
+</hibernate-mapping>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <class name="Teca.Core.Domain.Menu, Teca.Core" table="Menu" dynamic-update="true">
+    <id name="Id" column="Id" type="Int32" unsaved-value="0">
+      <generator class="identity" />
+    </id>
+    <property name="ParentID" column="ParentID" type="int" />
+    <property name="NameVNI" column="NameVNI" type="string" length="200" />
+    <property name="NameENG" column="NameENG" type="string" length="200" />
+    <property name="NavigateUrl" column="NavigateUrl" type="string" length="250" />
+    <property name="Priority" column="Priority" type="int" />
+    <property name="IsPub" column="IsPub" type="Boolean" />
+    <property name="Position" column="Position" type="int" />
+    <property name="Css" column="Css" type="string" length="50" />    
+    <property name="CreatedDate" column="CreatedDate" type="DateTime" />
+    <many-to-one name="ParentMenu" class="Teca.Core.Domain.Menu,Teca.Core" column="ParentID" not-found="ignore" insert="false" update ="false" fetch="select" />
+
+    <bag name="ChildMenus" table="Menu" lazy="true" cascade="none" inverse="false">
+      <key column="ParentID" />
+      <one-to-many class="Teca.Core.Domain.Menu, Teca.Core"/>
+    </bag>
+  </class>
+
+</hibernate-mapping>

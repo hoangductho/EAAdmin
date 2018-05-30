@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <class name="Teca.Core.Domain.Banners, Teca.Core" table="Banners" dynamic-update="true">
+    <id name="Id" column="Id" type="Int32" unsaved-value="0">
+      <generator class="identity" />
+    </id>
+    <property name="TypeID" column="TypeID" type="int"/>
+    <property name="NameVNI" column="NameVNI" type="string" length="255" />
+    <property name="NameENG" column="NameENG" type="string" length="255" />
+    <property name="NavigateUrl" column="NavigateUrl" type="string" length="150" />
+    <property name="Priority" column="Priority" type="int" />
+    <property name="Active" column="Active" type="Boolean" />    
+    <property name="FromDate" column="FromDate" type="DateTime" />
+    <property name="DescriptionsVNI" column="DescriptionsVNI" type="string" length="512" />
+    <property name="DescriptionsENG" column="DescriptionsENG" type="string" length="512" />
+    <property name="ToDate" column="ToDate" type="DateTime" />
+    <property name="ImagePath" column="ImagePath" type="string" length="250" />
+    <property name="CreatedBy" column="CreatedBy" type="string" length="50" />
+    <property name="CreatedDate" column="CreatedDate" type="DateTime" />
+    <property name="ModifiedBy" column="ModifiedBy" type="string" length="50" />
+    <property name="ModifiedDate" column="ModifiedDate" type="DateTime" />
+  </class>
+
+</hibernate-mapping>

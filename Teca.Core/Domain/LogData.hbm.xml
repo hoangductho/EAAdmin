@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <class name="Teca.Core.Domain.LogData, Teca.Core" table="LogData" >
+    <id name="Id" column="Id" type="Int32" unsaved-value="0">
+      <generator class="identity" />
+    </id>
+    <property name="AdminID" column="AdminID" type="int"/>
+    <property name="Type" column="Type" type="int"/>
+    <property name="Event" column="Event" type="string" length="150"/>
+    <property name="CreateDate" column="CreateDate" type="DateTime"/>
+    <property name="Comment" column="Comment" type="string" length="512"/>
+    <property name="IpAddress" column="IpAddress" type="string" length="50" />
+    <property name="Browser" column="Browser" type="string" length="50" />
+    <many-to-one name="User" class="IdentityManagement.Domain.user,IdentityManagement"
+                 column="AdminID"
+                 not-found="ignore" insert="false" update ="false" fetch="select" />
+  </class>
+
+</hibernate-mapping>

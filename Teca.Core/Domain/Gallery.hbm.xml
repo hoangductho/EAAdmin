@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <class name="Teca.Core.Domain.Gallery, Teca.Core" table="Gallery" dynamic-update="true" >
+    <id name="Id" column="Id" type="Int32" unsaved-value="0">
+      <generator class="identity" />
+    </id>    
+    <property name="TypeID" column="TypeID" type="int" />
+    <property name="ImgPath" column="ImgPath" type="string" length="512" />    
+    <property name="Active" column="Active" type="Boolean" />  
+    <property name="CreateBy" column="CreateBy" type="string" length="50"/>
+    <property name="CreateDate" column="CreateDate" type="DateTime" />
+    <many-to-one name="GalleryTypes" class="Teca.Core.Domain.GalleryType,Teca.Core" column="TypeID" not-found="ignore" insert="false" update ="false" fetch="select" />
+  </class>
+
+</hibernate-mapping>

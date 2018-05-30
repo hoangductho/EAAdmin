@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+	<class name="Teca.Core.Domain.Videos, Teca.Core" table="Videos" dynamic-update="true">
+    <id name="Id" column="Id" type="Int32" unsaved-value="0">
+      <generator class="identity"/>
+    </id>
+    <property name="VideoTypeID" column="VideoTypeID" type="int" />
+		<property name="NameVNI" column="NameVNI" type="string" length="200" />
+    <property name="NameENG" column="NameENG" type="string" length="200" />
+		<property name="Summary" column="Summary" type="string" length="500"/>
+    <property name="ImagePath" column="ImagePath" type="string" length="255" />
+    <property name="VideoPath" column="VideoPath" type="string" length="255" />
+		<property name="Css" column="Css" type="string" length="50" />
+    <property name="URLName" column="URLName" type="string" length="50"/>   
+    <property name="Priority" column="Priority" type="int" />
+    <property name="IsHot" column="IsHot" type="Boolean" />
+    <property name="Active" column="Active" type="Boolean" />
+    <property name="CreatedBy" column="CreatedBy" type="string" length="50" />
+    <property name="CreatedDate" column="CreatedDate" type="DateTime" />
+    <property name="ModifiedBy" column="ModifiedBy" type="string" length="50" />
+    <property name="ModifiedDate" column="ModifiedDate" type="DateTime" />
+    <property name="LinkType" column="LinkType" type="int" />
+
+    <many-to-one name="VideoTypes" class="Teca.Core.Domain.VideoType,Teca.Core" column="VideoTypeID" not-found="ignore" insert="false" update ="false" fetch="select" />
+	</class>
+
+</hibernate-mapping>

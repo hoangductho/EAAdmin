@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <class name="Teca.Core.Domain.Introduction, Teca.Core" table="Introduction" >
+    <id name="Id" column="Id" type="Int32" unsaved-value="0">
+      <generator class="identity" />
+    </id>    
+    <property name="Title" column="Title" type="string" length="150" />
+    <property name="TitleENG" column="TitleENG" type="string" length="150" />
+    <property name="Description" column="Description" type="StringClob" />
+    <property name="DescriptionENG" column="DescriptionENG" type="StringClob" />
+    <property name="Active" column="Active" type="Boolean" />
+    <property name="Type" column="Type" type="int" />
+    <property name="CreateDate" column="CreateDate" type="DateTime" />
+    <property name="CreateBy" column="CreateBy" type="string" length="50" />
+  </class>
+
+</hibernate-mapping>

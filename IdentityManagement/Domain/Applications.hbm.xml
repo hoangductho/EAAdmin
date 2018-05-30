@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <class name="IdentityManagement.Domain.Applications, IdentityManagement" table="Applications" >    
+    <id name="AppID" column="AppID" unsaved-value="0">
+      <generator class="identity" />
+    </id>
+    <property name="AppName" column="AppName" type="string" length="255" />
+    <property name="Description" column="Description" type="string" length="1024" />
+    <property name="URL" column="URL" type="string" length="1024" />
+  </class>
+
+</hibernate-mapping>

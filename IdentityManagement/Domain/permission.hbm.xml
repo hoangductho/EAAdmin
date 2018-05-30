@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <class name="IdentityManagement.Domain.permission, IdentityManagement" dynamic-update="true" table="permission" >
+    <id name="permissionid" column="permissionid" type="Int32" unsaved-value="0">
+      <generator class="identity" />
+    </id>
+    <property name="AppID" column="AppID" type="int" />
+    <property name="name" column="name" type="string" length="100" />
+    <!--<property name="objectid" column="objectid" type="int" />
+    <property name="operationid" column="operationid" type="int" />-->
+    <property name="Description" column="Description" type="string" length="150" />
+
+    <bag name="Roles" table="role_permission" cascade="none" lazy="true">
+      <key column="permissionid" />
+      <many-to-many class="IdentityManagement.Domain.role, IdentityManagement" column="roleid" />
+    </bag>
+    <many-to-one name="Operation" class="IdentityManagement.Domain.operation, IdentityManagement" column="operationid" not-null="true" />
+    <many-to-one name="ObjectRBAC" class="IdentityManagement.Domain.objectRbac, IdentityManagement" column="objectid" not-null="true" />    
+  </class>
+</hibernate-mapping>

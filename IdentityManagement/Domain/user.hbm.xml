@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <class name="IdentityManagement.Domain.user, IdentityManagement" dynamic-update="true" table="userdata" >    
+    <id name="userid" column="userid" type="Int32" unsaved-value="0">
+      <generator class="identity" />
+    </id>
+    <property name="username" column="username" type="string" length="50" />
+    <property name="password" column="password" type="string" length="64" />
+    <property name="PasswordFormat" column="PasswordFormat" type="int" />
+    <property name="PasswordSalt" column="PasswordSalt" type="string" length="128" />
+    <property name="email" column="email" type="string" length="100" />
+    <property name="PasswordQuestion" column="PasswordQuestion" type="string" length="256" />
+    <property name="PasswordAnswer" column="PasswordAnswer" type="string" length="256" />
+    <property name="IsApproved" column="IsApproved" type="Boolean" />
+    <property name="IsLockedOut" column="IsLockedOut" type="Boolean" />
+    <property name="CreateDate" column="CreateDate" type="DateTime" />
+    <property name="LastLoginDate" column="LastLoginDate" type="DateTime" />
+    <property name="LastPasswordChangedDate" column="LastPasswordChangedDate" type="DateTime" />
+    <property name="LastLockoutDate" column="LastLockoutDate" type="DateTime" />
+    <property name="FailedPasswordAttemptCount" column="FailedPassAttemptCount" type="int" />
+    <property name="FailedPasswordAnswerAttemptCount" column="FailedPassAnswerAttemptCount" type="int" />
+    <property name="FailedPasswordAttemptWindowStart" column="FailedPassAttemptWindowStart" type="DateTime" />
+    <property name="FailedPasswordAnswerAttemptStart" column="FailedPassAnswerAttemptStart" type="DateTime" />
+    <property name="GroupName" column="GroupName" type="string" length="50" />
+    
+    <bag name="ApplicationList" table="APP_USER" lazy="true" >
+      <key column="UserID" />
+      <many-to-many class="IdentityManagement.Domain.Applications, IdentityManagement" column="AppID" />
+    </bag>
+    
+    <bag name="Roles" table="user_role" lazy="true">
+      <key column="userid" />
+      <many-to-many class="IdentityManagement.Domain.role, IdentityManagement" column="roleid" />
+    </bag>
+
+    <bag name="Sessions" table="user_session" lazy="true">
+      <key column="userid" />
+      <many-to-many class="IdentityManagement.Domain.session, IdentityManagement" column="sessionid" />
+    </bag>       
+  </class>
+
+</hibernate-mapping>

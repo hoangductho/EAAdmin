@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Teca.Core", "Teca.Core\Teca.Core.csproj", "{28037FFB-0422-4ADD-9E59-47B6C1881ABE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Teca.Admin", "Teca.Admin\Teca.Admin.csproj", "{E3DE0966-24DA-41B2-9BDA-69B3DA355041}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdentityManagement", "IdentityManagement\IdentityManagement.csproj", "{1F05832F-F891-4A71-A137-011888685FD5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{28037FFB-0422-4ADD-9E59-47B6C1881ABE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{28037FFB-0422-4ADD-9E59-47B6C1881ABE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{28037FFB-0422-4ADD-9E59-47B6C1881ABE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{28037FFB-0422-4ADD-9E59-47B6C1881ABE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E3DE0966-24DA-41B2-9BDA-69B3DA355041}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E3DE0966-24DA-41B2-9BDA-69B3DA355041}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E3DE0966-24DA-41B2-9BDA-69B3DA355041}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E3DE0966-24DA-41B2-9BDA-69B3DA355041}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1F05832F-F891-4A71-A137-011888685FD5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1F05832F-F891-4A71-A137-011888685FD5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1F05832F-F891-4A71-A137-011888685FD5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1F05832F-F891-4A71-A137-011888685FD5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
